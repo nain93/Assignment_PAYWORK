@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "49860767577",
+    "project_id": "assignment-paywork",
+    "storage_bucket": "assignment-paywork.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:49860767577:android:3b338a76e113439375a648",
+        "android_client_info": {
+          "package_name": "com.android.application"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "49860767577-2lm3frbmf6vjd7994cgrlerm26ol2d8u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDcwvKM6teI64QmmbRC4mftGErTgl6kpwU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "49860767577-2lm3frbmf6vjd7994cgrlerm26ol2d8u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:49860767577:android:af4a9d214dc5e69f75a648",
+        "android_client_info": {
+          "package_name": "com.assignment_paywork"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "49860767577-2lm3frbmf6vjd7994cgrlerm26ol2d8u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDcwvKM6teI64QmmbRC4mftGErTgl6kpwU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "49860767577-2lm3frbmf6vjd7994cgrlerm26ol2d8u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
