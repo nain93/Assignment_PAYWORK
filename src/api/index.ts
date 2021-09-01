@@ -33,7 +33,7 @@ export const createList = async (content: string) => {
     isCheck: false,
     createdAt: today.toISOString(),
   });
-  firestore().collection('todo').doc('dcYhkrklqNDQrrQeVfrS').update(todos);
+  firestore().collection('todo').doc('dcYhkrklqNDQrrQeVfrS').update(todos!);
   return { msg: "create successfully" }
 };
 
@@ -79,10 +79,12 @@ export const postTodoDelete = async (id: string) => {
   }
   const res = await getAllList();
   const todos = res.data();
-  const deleteList = todos?.todolist.filter((item: Ilist) => (
+  const todolist = todos?.todolist.filter((item: Ilist) => (
     item.id !== id
   ))
-  firestore().collection('todo').doc('dcYhkrklqNDQrrQeVfrS').update(deleteList);
+  console.log(todolist, "deleteList");
+
+  firestore().collection('todo').doc('dcYhkrklqNDQrrQeVfrS').update({ todolist });
   return { msg: "delete successfully" }
 }
 

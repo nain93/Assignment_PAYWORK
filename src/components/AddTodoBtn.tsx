@@ -3,25 +3,41 @@ import { View, Text, TouchableOpacity, Modal, TextInput } from 'react-native'
 import styled from 'styled-components/native';
 import AddIcon from "react-native-vector-icons/MaterialIcons"
 import { createList } from '../api';
-import { Imodal } from '../../shared-interfaces';
+import { Ilist, IlistState } from '../../shared-interfaces';
+import { useEffect } from 'react';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 
 
 
-const AddTodoBtn = ({ modalVisible, setModalVisible }: Imodal) => {
+const AddTodoBtn = ({ list, setList }: IlistState) => {
+    const [modalVisible, setModalVisible] = useState<boolean>(false);
     const [value, setValue] = useState<string>("")
-    const handleAddTodo = async () => {
-        if (value === undefined) {
+    const [error, setError] = useState<string>("")
+    const handleAddTodo = () => {
+        const today = new Date()
+        if (value.length === 0) {
             return
         }
-        try {
-            const res = await createList(value)
-            console.log(res, "res");
-        }
-        catch {
+        setList((prevState: Ilist[]) =>
+            [
+                {
+                    id: String(Date.now()),
+                    isCheck: false,
+                    createdAt: today.toISOString(),
+                    content: value
+                },
+            ].concat(prevState),
+        );
+        setValue("")
 
-        }
     }
+    useEffect(() => {
+        AsyncStorage.setItem('todos', JSON.stringify(list))
+    }, [list])
+
+
+
     const handleChange = (text: string) => {
         setValue(text)
     }
@@ -52,7 +68,7 @@ const AddTodoBtn = ({ modalVisible, setModalVisible }: Imodal) => {
                                 setModalVisible(!modalVisible)
                             }}
                         >
-                            <Text >Add Todo</Text>
+                            <Text>Add Todo</Text>
                         </AddBtn>
                     </ModalView>
                 </CenteredView>
@@ -67,7 +83,7 @@ const AddTodoBtn = ({ modalVisible, setModalVisible }: Imodal) => {
 
 const AddButton = styled.TouchableOpacity`
 position: absolute;
-right: 0px;
+right: -15px;
 bottom:30px;
 
 `

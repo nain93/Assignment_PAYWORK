@@ -5,8 +5,8 @@ export interface Ilist {
     createdAt: string
 }
 
-export interface Imodal {
-    modalVisible: boolean,
-    setModalVisible: React.Dispatch<React.SetStateAction<boolean>>
+export interface IlistState {
+    list: Ilist[]
+    setList: React.Dispatch<React.SetStateAction<Ilist[]>>
 }
 
