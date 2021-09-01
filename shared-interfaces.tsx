@@ -5,11 +5,8 @@ export interface Ilist {
     createdAt: string
 }
 
-export interface ISimplePost {
-    id: string | number;
-    title: string;
-    video_id: string;
-    author: string;
+export interface Imodal {
+    modalVisible: boolean,
+    setModalVisible: React.Dispatch<React.SetStateAction<boolean>>
 }
 
-export type IPosts = ISimplePost[]

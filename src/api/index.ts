@@ -27,13 +27,13 @@ export const createList = async (content: string) => {
   const res = await getAllList();
   const todos = res.data()
   const today = new Date();
-  todos?.todoList.unshift({
+  todos?.todolist.unshift({
     id: String(Date.now()),
     content,
     isCheck: false,
     createdAt: today.toISOString(),
   });
-  firestore().collection('todo').doc('dcYhkrklqNDQrrQeVfrS').update(res);
+  firestore().collection('todo').doc('dcYhkrklqNDQrrQeVfrS').update(todos);
   return { msg: "create successfully" }
 };
 
@@ -44,7 +44,7 @@ export const postTodoEdit = async (id: string, content: string) => {
   const res = await getAllList();
   const todos = res.data();
 
-  const editList = todos?.todoList.map((item: Ilist) => {
+  const editList = todos?.todolist.map((item: Ilist) => {
     if (item.id === id) {
       item.content = content
     }
@@ -63,7 +63,7 @@ export const postTodoCheck = async (id: string, isCheck: boolean) => {
   }
   const res = await getAllList();
   const todos = res.data();
-  const editList = todos?.todoList.map((item: Ilist) => {
+  const editList = todos?.todolist.map((item: Ilist) => {
     if (item.id === id) {
       item.isCheck = isCheck
     }
@@ -79,7 +79,7 @@ export const postTodoDelete = async (id: string) => {
   }
   const res = await getAllList();
   const todos = res.data();
-  const deleteList = todos?.todoList.filter((item: Ilist) => (
+  const deleteList = todos?.todolist.filter((item: Ilist) => (
     item.id !== id
   ))
   firestore().collection('todo').doc('dcYhkrklqNDQrrQeVfrS').update(deleteList);

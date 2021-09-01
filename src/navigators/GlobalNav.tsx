@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import TodoList from '../screens/TodoList';
@@ -9,11 +9,11 @@ const GlobalNav = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        screenOptions={{ cardStyle: { backgroundColor: "white" } }}>
+        screenOptions={{ cardStyle: { backgroundColor: 'white' } }}>
         <Stack.Screen
           name="TodoList"
           options={{
-            title: "TODOLIST",
+            headerTitle: 'TODOLIST',
           }}
           component={TodoList}
         />
