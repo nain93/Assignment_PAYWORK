@@ -1,9 +1,7 @@
-import React, { useRef, useState } from 'react';
-import { View, Text, TouchableOpacity, TextInput } from 'react-native';
+import React, { useRef } from 'react';
+import { TouchableOpacity, TextInput } from 'react-native';
 import styled from 'styled-components/native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
-import { postTodoDelete } from '../../api';
-import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Ilist } from '../../../shared-interfaces';
 
 interface Icontent {

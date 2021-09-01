@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, Modal, TextInput } from 'react-native';
+import { View, Modal } from 'react-native';
 import styled from 'styled-components/native';
 import AddIcon from 'react-native-vector-icons/MaterialIcons';
 import { Ilist, IlistState } from '../../shared-interfaces';
